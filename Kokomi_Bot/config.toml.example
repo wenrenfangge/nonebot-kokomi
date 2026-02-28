@@ -1,0 +1,30 @@
+# Kokomi Bot 配置示例（对应官方文档中的 config.yaml）
+# 复制本文件为 config.toml 后按需修改
+
+# ========== API（对应 config.yaml 的 API） ==========
+# 文档中有 API_USERNAME（接口用户名）、API_PASSWORD（接口密码）。当前 Kokomi 代码仅支持 token（对应 API_PASSWORD）；API_USERNAME 无对应配置项，后续若作者支持可在此处增加。
+[api]
+host = "127.0.0.1"       # 后端接口地址的主机，来自 API_URL
+port = 8080             # 后端接口端口，来自 API_URL
+timeout = 10            # 接口请求超时时间（秒），对应 REQUEST_TIMEOUT
+token = "password"      # 接口密码，对应文档中的 API_PASSWORD（接口用户名 API_USERNAME 当前代码未使用）
+
+# ========== BOT（对应 config.yaml 的 BOT） ==========
+[bot]
+platform = "KokomiBot-Bate"   # Bot 平台标识 PLATFORM
+log_level = "debug"          # 日志等级 LOG_LEVEL：debug / info
+language = "zh_SG"          # 语言
+use_mock = true              # 是否启用模拟数据（测试用）USE_MOCK
+file_type = "png"            # 返回图片格式 RETURN_PIC_TYPE：png / jpg
+show_dog_tag = true          # 显示玩家 Dog Tag（徽章）SHOW_DOG_TAG
+show_clan_tag = false        # 显示工会标签 SHOW_CLAN_TAG
+show_costom_tag = true       # 显示自定义标签 SHOW_CUSTOM_TAG（代码中字段名为 costom）
+root_users = "1"             # 超级管理员 ID 列表 ROOT_USERS，多个用冒号分隔，如 "123456789:987654321"
+# 注：BOT_INFO、ADMINS_USERS 在官方 YAML 中有，当前 Kokomi 代码未使用
+
+# ========== 默认用户/显示设置 ==========
+[default]
+language = "zh_SG"
+theme = "default"
+show_rating = true
+filter_valid_data = true
